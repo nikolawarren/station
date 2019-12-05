@@ -1,0 +1,24 @@
+<script th:src="@{/scripts/report/updatereport.js}"></script>
+
+<form id="saveForm" action="./export" method="post">
+    <table class="addNewInfList">
+        <tr>
+            <th>请选择上传的报表</th>
+            <td>
+            	<input id="file" name="file" type="file" class="inp-list w-200 clear-mr f-left"/>
+            	<input th:value="${report_id}" type="hidden" id="report_id" name="report_id">
+            </td> 
+                       
+        </tr>
+        
+    </table>
+    
+    <div class="bottomBtnBox">
+    	
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">确定</a>
+        <a class="btn-93X38 backBtn" href="javascript: closeDialog()">返回</a>
+    </div>
+    
+</form>
+
+

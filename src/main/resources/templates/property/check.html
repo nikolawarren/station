@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="fragments/layout">
+<head>
+    <title>电影管理</title>
+
+    <link th:href="@{/scripts/pagination/pagination.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/artDialog/default.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/My97DatePicker/skin/WdatePicker.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/styles/index.css}" rel="stylesheet"  type="text/css"/>
+ <!-- 
+    <script th:src="@{/scripts/pagination/jquery.pagination.js}"></script>
+    <script th:src="@{/scripts/jquery.smartselect-1.1.min.js}"></script>
+    <script th:src="@{/scripts/My97DatePicker/WdatePicker.js}"></script>
+	<script th:src="@{/scripts/movie/list.js}"></script> 
+	-->
+	<script th:src="@{/scripts/property/check.js}"></script> 
+</head>
+<body>
+<div class="locationLine" layout:fragment="prompt">
+    当前位置：首页 &gt; <em >财产管理</em>
+</div>
+
+<div class="statisticBox w-782"  layout:fragment="content">
+    <div class="dataDetailList mt-12">      
+    <table class="dataListTab">
+    	<thead>
+            <tr>
+                <th>任务安排号</th>
+                <th>安排人</th>
+                <th>需检查车辆</th>
+				<th>操作</th> 
+            </tr>
+        </thead>    
+            <tr th:each="arrangement : ${lista}">
+            	<td th:text="${arrangement.arrangement_id}"></td>
+            	<td th:text="${arrangement.arrangement_user.username}"></td>
+            	<td th:text="${arrangement.vehicle.vehicle_number}"></td>
+            	<td><a class="c-50a73f mlr-6" href="javascript:void(0)" th:onclick="|refund(${arrangement.arrangement_id})|">填写检查清单</a></td>
+            </tr>
+            
+    	
+    </table>
+    </div>
+</div>
+
+</body>
+</html>

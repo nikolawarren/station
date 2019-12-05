@@ -1,0 +1,30 @@
+<script th:src="@{/scripts/personal/addchange.js}"></script>
+
+<form id="saveForm" action="./addrefund" method="post">
+    <table class="addNewInfList">
+        <tr>
+            <th>申请理由</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text"   id="information" name="information"  maxlength="120" /></td>
+       	</tr>
+       	<tr>
+            <th>更换车次</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text"   id="ticket_time" name="ticket_time"  maxlength="120" /></td>
+        </tr>
+        <tr>
+            <th>更换出发站</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text"   id="ticket_departure" name="ticket_departure"  maxlength="120" /></td>
+        </tr>
+        <tr>
+            <th>更换目的站</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text"   id="ticket_destination" name="ticket_destination"  maxlength="120" /></td> 
+            <input  type="hidden"   id="ticket_id" name="ticket_id"  th:value="${ticket_id}" />           
+        <tr>
+        
+    </table>
+    <div class="bottomBtnBox">
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">确定</a>
+        <a class="btn-93X38 backBtn" href="javascript: closeDialog()">返回</a>
+    </div>
+</form>
+
+

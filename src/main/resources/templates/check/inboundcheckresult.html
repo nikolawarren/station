@@ -1,0 +1,19 @@
+<script th:src="@{/scripts/check/inboundcheckresult.js}"></script>
+
+<form id="saveForm" action="./addrefund" method="post">
+    <table class="addNewInfList">
+        <tr>
+            <th>检查结果</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text"   id="result" name="result"  maxlength="120" /></td>
+			
+            <input  type="hidden"   id="inboundarrangement_id" name="inboundarrangement_id"  th:value="${inboundarrangement_id}" />           
+        </tr>
+        
+    </table>
+    <div class="bottomBtnBox">
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">确定</a>
+        <a class="btn-93X38 backBtn" href="javascript: closeDialog()">返回</a>
+    </div>
+</form>
+
+

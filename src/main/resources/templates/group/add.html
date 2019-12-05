@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="fragments/layout">
+<head>
+    <title>电影管理</title>
+
+    <link th:href="@{/scripts/pagination/pagination.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/artDialog/default.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/My97DatePicker/skin/WdatePicker.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/styles/index.css}" rel="stylesheet"  type="text/css"/>
+ <!-- 
+    <script th:src="@{/scripts/pagination/jquery.pagination.js}"></script>
+    <script th:src="@{/scripts/jquery.smartselect-1.1.min.js}"></script>
+    <script th:src="@{/scripts/My97DatePicker/WdatePicker.js}"></script>
+   
+	<script th:src="@{/scripts/movie/list.js}"></script> 
+	-->
+	
+	<script th:src="@{/scripts/group/addgroup.js}"></script> 
+</head>
+<body>
+<div class="locationLine" layout:fragment="prompt">
+    当前位置：首页 &gt; <em >团体购票管理</em>
+</div>
+
+
+<div class="statisticBox w-782"  layout:fragment="content">
+
+<form id="saveForm" action="./savegroup" method="post">
+    <table class="addNewInfList">
+    
+   	 	<tr>
+            <th>乘坐人数</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text"   id="person_number" name="person_number"  maxlength="120" /></td>
+       	</tr>
+       	
+       	<tr>
+            <th>出发日期</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text"   id="group_date" name="group_date"  maxlength="120" /></td>
+        </tr>
+       	<tr>
+            <th>出发时间</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text"   id="group_time" name="group_time"  maxlength="120" /></td>
+        </tr>
+        <tr>
+            <th>出发地址</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text"   id="group_departure" name="group_departure"  maxlength="120" /></td>
+        </tr>
+        <tr>
+            <th>目的地址</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text"   id="group_destination" name="group_destination"  maxlength="120" /></td> 
+                    
+        <tr>
+    </table>
+
+    <div class="bottomBtnBox">
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">提交</a>
+    </div>
+	</form>
+</div>
+  
+</body>
+</html>

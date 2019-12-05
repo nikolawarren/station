@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="fragments/layout">
+<head>
+    <title>电影管理</title>
+
+    <link th:href="@{/scripts/pagination/pagination.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/artDialog/default.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/My97DatePicker/skin/WdatePicker.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/styles/index.css}" rel="stylesheet"  type="text/css"/>
+ <!-- 
+    <script th:src="@{/scripts/pagination/jquery.pagination.js}"></script>
+    <script th:src="@{/scripts/jquery.smartselect-1.1.min.js}"></script>
+    <script th:src="@{/scripts/My97DatePicker/WdatePicker.js}"></script>
+   
+	<script th:src="@{/scripts/movie/list.js}"></script> 
+	-->
+	
+	<script th:src="@{/scripts/property/addrepair.js}"></script> 
+</head>
+<body>
+<div class="locationLine" layout:fragment="prompt">
+    当前位置：首页 &gt; <em >财产管理</em>
+</div>
+
+
+<div class="statisticBox w-782"  layout:fragment="content">
+
+<form id="saveForm" action="./savegroup" method="post">
+    <div class="radiusGrayBox782">
+        <div class="radiusGrayTop782"></div>
+        <div class="radiusGrayMid782">
+            <div class="dataSearchBox forUserRadius">
+    	<ul>
+   	 		<li >
+           <label class="preInpTxt f-left">维修车辆</label>
+            
+            	<select name="vehicle" id="vehicle" class="inp-list f-left w-200" >
+                    <option th:each="vehicle:${listv}"
+                            th:value="${vehicle.vehicle_id}"
+                            th:text="${vehicle.vehicle_number}">
+                    </option>
+                </select>
+            </li> 
+       
+       	
+       		<li>
+            <label class="preInpTxt f-left">维修费</label>
+            <input class="inp-list f-left w-200" type="text"   id="repair_cost" name="repair_cost"  maxlength="120" />
+        	</li>
+       	
+            <label class="preInpTxt f-left">维修结果</label>
+           <input class="inp-list f-left w-200" type="text"   id="repair_result" name="repair_result"  maxlength="120" />
+       
+   
+
+    <li>
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">提交</a>
+    </li>
+    </ul>
+    </div>
+        </div>
+    </div>
+	</form>
+</div>
+  
+</body>
+</html>

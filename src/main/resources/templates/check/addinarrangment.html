@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="fragments/layout">
+<head>
+    <title>电影管理</title>
+
+    <link th:href="@{/scripts/pagination/pagination.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/artDialog/default.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/My97DatePicker/skin/WdatePicker.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/styles/index.css}" rel="stylesheet"  type="text/css"/>
+ <!-- 
+    <script th:src="@{/scripts/pagination/jquery.pagination.js}"></script>
+    <script th:src="@{/scripts/jquery.smartselect-1.1.min.js}"></script>
+    <script th:src="@{/scripts/My97DatePicker/WdatePicker.js}"></script>
+   
+	<script th:src="@{/scripts/movie/list.js}"></script> 
+	-->
+	
+	<script th:src="@{/scripts/check/addinarrangement.js}"></script> 
+</head>
+<body>
+<div class="locationLine" layout:fragment="prompt">
+    当前位置：首页 &gt; <em >检查管理</em>
+</div>
+
+
+<div class="statisticBox w-782"  layout:fragment="content">
+
+<form id="saveForm" action="./savegroup" method="post">
+    <div class="radiusGrayBox782">
+        <div class="radiusGrayTop782"></div>
+        <div class="radiusGrayMid782">
+            <div class="dataSearchBox forUserRadius">
+   	 	 <ul>
+   	 	 	<li>
+	            <label class="preInpTxt f-left">检查员</label>
+	            
+	            	<select name="inboundchecker" id="inboundchecker" class="inp-list f-left w-200">
+	                    <option th:each="inboundchecker:${listi}"
+	                            th:value="${inboundchecker.userid}"
+	                            th:text="${inboundchecker.username}">
+	                    </option>
+	                </select>
+	        </li>
+       	
+       		<li>
+       	
+	           <label class="preInpTxt f-left">检查口</label>
+	            
+	           		<select name="entrance" id="entrance" class="inp-list f-left w-200">
+	                    <option th:each="entrance:${liste}"
+	                            th:value="${entrance}"
+	                            th:text="${entrance}">
+	                    </option>
+	                </select>
+			 </li>
+        
+       <li>
+   
+
+    
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">提交</a>
+  		 </li>
+    	</ul>
+    	</div>
+        </div>
+    </div>
+	</form>
+	
+	
+</div>
+  
+</body>
+</html>

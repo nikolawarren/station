@@ -1,0 +1,18 @@
+<script th:src="@{/scripts/group/addrefund.js}"></script>
+
+<form id="saveForm" action="./addrefund" method="post">
+    <table class="addNewInfList">
+        <tr>
+            <th>申请理由</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text"   id="information" name="information"  maxlength="120" /></td> 
+            <input  type="hidden"   id="group_id" name="group_id"  th:value="${group_id}" />           
+        </tr>
+        
+    </table>
+    <div class="bottomBtnBox">
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">确定</a>
+        <a class="btn-93X38 backBtn" href="javascript: closeDialog()">返回</a>
+    </div>
+</form>
+
+

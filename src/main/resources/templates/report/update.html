@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="fragments/layout">
+<head>
+    <title>电影管理</title>
+
+    <link th:href="@{/scripts/pagination/pagination.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/artDialog/default.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/My97DatePicker/skin/WdatePicker.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/styles/index.css}" rel="stylesheet"  type="text/css"/>
+ <!-- 
+    <script th:src="@{/scripts/pagination/jquery.pagination.js}"></script>
+    <script th:src="@{/scripts/jquery.smartselect-1.1.min.js}"></script>
+    <script th:src="@{/scripts/My97DatePicker/WdatePicker.js}"></script>
+	<script th:src="@{/scripts/movie/list.js}"></script> 
+	-->
+	<script th:src="@{/scripts/report/update.js}"></script> 
+</head>
+<body>
+<div class="locationLine" layout:fragment="prompt">
+    当前位置：首页 &gt; <em >财务管理</em>
+</div>
+
+<div class="statisticBox w-782"  layout:fragment="content">
+   <form id="queryForm" method="get">
+    <div class="radiusGrayBox782">
+        <div class="radiusGrayTop782"></div>
+        <div class="radiusGrayMid782">
+            <div class="dataSearchBox forUserRadius">
+                <ul>
+                    <li>
+                        <label class="preInpTxt f-left">报表编号</label>
+                        <input type="text" class="inp-list f-left w-200" placeholder="按报表编号查询" id="report_id"  name="report_id"/>
+                    </li>
+                    <li>
+                        <label class="preInpTxt f-left">报表类型</label>
+                        <select name="type" id="type" class="inp-list f-left w-200" >
+		                    <option th:each="template:${listt}"
+		                            th:value="${template}"
+		                            th:text="${template}">
+		                    </option>
+		                </select>
+                    </li>
+                    <li>
+                        <label class="preInpTxt f-left">报表名称</label>
+                        <input type="text" class="inp-list f-left w-200" placeholder="按报表名称搜索" id="report_name"  name="report_name"/>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="blueBtn-62X30 f-right" id="searchBtn">查询</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </form>  
+    <div class="dataDetailList mt-12">    
+		    <table class="dataListTab" >
+		    	<thead>
+		            <tr>
+		                <th>财报报表编号</th>
+		                <th>报表类型</th>
+		                <th>报表名称</th>
+		                <th>填写日期</th>
+		                <th>填写人</th> 
+		                <th>操作</th>                             
+		            </tr>
+		        </thead>    
+		            <tr th:each="report : ${listr}">
+		            	<td th:text="${report.report_id}"></td>
+		            	<td th:text="${report.type}"></td>
+		            	<td th:text="${report.report_name}"></td>
+		            	<td th:text="${report.report_date}"></td>
+		            	<td th:text="${report.users.username}"></td>
+		            	<td><a class="c-50a73f mlr-6" href="javascript:void(0)" th:onclick="|refund(${report.report_id})|">更新</a></td>
+		            </tr>
+		    	
+		    </table>
+    </div>
+</div>
+
+</body>
+</html>

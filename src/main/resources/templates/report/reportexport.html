@@ -1,0 +1,28 @@
+<script th:src="@{/scripts/report/reportexport.js}"></script>
+
+<form id="saveForm2" action="./export" method="post">
+    <table class="addNewInfList">
+        <tr>
+            <th>报表模板</th>
+            <td>
+            	<select name="template" id="template2">
+                    <option th:each="template:${listt}"
+                            th:value="${template}"
+                            th:text="${template}">
+                    </option>
+                </select>
+            </td> 
+                       
+        </tr>
+        
+    </table>
+    
+    <div class="bottomBtnBox">
+    	
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">确定</a>
+        <a class="btn-93X38 backBtn" href="javascript: closeDialog()">返回</a>
+    </div>
+    
+</form>
+
+

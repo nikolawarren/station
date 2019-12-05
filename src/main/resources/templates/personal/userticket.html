@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="fragments/layout">
+<head>
+    <title>电影管理</title>
+
+    <link th:href="@{/scripts/pagination/pagination.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/artDialog/default.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/My97DatePicker/skin/WdatePicker.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/styles/index.css}" rel="stylesheet"  type="text/css"/>
+ <!-- 
+    <script th:src="@{/scripts/pagination/jquery.pagination.js}"></script>
+    <script th:src="@{/scripts/jquery.smartselect-1.1.min.js}"></script>
+    <script th:src="@{/scripts/My97DatePicker/WdatePicker.js}"></script>
+	<script th:src="@{/scripts/movie/list.js}"></script> 
+	-->
+	<script th:src="@{/scripts/personal/userticket.js}"></script> 
+</head>
+<body>
+<div class="locationLine" layout:fragment="prompt">
+    当前位置：首页 &gt; <em >个人购票管理</em>
+</div>
+
+<div class="statisticBox w-782"  layout:fragment="content">
+    <form id="queryForm" method="get">
+    <div class="radiusGrayBox782">
+        <div class="radiusGrayTop782"></div>
+        <div class="radiusGrayMid782">
+            <div class="dataSearchBox forUserRadius">
+                <ul>
+                    <li>
+                        <label class="preInpTxt f-left">出发站</label>
+                        <input type="text" class="inp-list f-left w-200" placeholder="按出发站查询" id="ticket_departure"  name="ticket_departure"/>
+                    </li>
+                    <li>
+                        <label class="preInpTxt f-left">目的站</label>
+                        <input type="text" class="inp-list f-left w-200" placeholder="按目的站查询" id="ticket_destination"  name="ticket_destination"/>
+                    </li>
+                    
+                    <li>
+                        <a href="javascript:void(0)" class="blueBtn-62X30 f-right" id="searchBtn">查询</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </form>  
+    <div class="dataDetailList mt-12" >    
+    <table class="dataListTab">
+    	<thead>
+            <tr>
+                <th>车票订单号</th>
+                <th>出发日期</th>
+                <th>车次</th>   
+                <th>出发站</th>  
+                <th>目的站</th> 
+                <th>操作</th>                             
+            </tr>
+            <tbody id="tbodyContent">
+            </tbody>
+    	</thead>
+    </table>
+    </div>
+</div>
+
+</body>
+</html>

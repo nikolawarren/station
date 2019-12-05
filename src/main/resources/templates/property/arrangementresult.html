@@ -1,0 +1,34 @@
+<script th:src="@{/scripts/property/arrangementresult.js}"></script>
+
+<form id="saveForm" action="./addrefund" method="post">
+    <table class="addNewInfList">
+        <tr>
+            <th>安排车辆</th>
+            <td> 
+            	<select name="vehicle" id="vehicle">
+                    <option th:each="vehicle:${listv}"
+                            th:value="${vehicle.vehicle_id}"
+                            th:text="${vehicle.vehicle_number}">
+                    </option>
+                </select>
+			</td>
+            <th>安排检查员</th>
+            <td>
+            	<select name="checker" id="checker">
+                    <option th:each="users:${listu}"
+                            th:value="${users.userid}"
+                            th:text="${users.username}">
+                    </option>
+                </select>
+            </td> 
+            <input  type="hidden"   id="group_id" name="group_id"  th:value="${group_id}" />           
+        </tr>
+        
+    </table>
+    <div class="bottomBtnBox">
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">确定</a>
+        <a class="btn-93X38 backBtn" href="javascript: closeDialog()">返回</a>
+    </div>
+</form>
+
+

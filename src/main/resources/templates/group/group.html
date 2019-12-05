@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="fragments/layout">
+<head>
+    <title>电影管理</title>
+
+    <link th:href="@{/scripts/pagination/pagination.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/artDialog/default.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/My97DatePicker/skin/WdatePicker.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/styles/index.css}" rel="stylesheet"  type="text/css"/>
+ <!-- 
+    <script th:src="@{/scripts/pagination/jquery.pagination.js}"></script>
+    <script th:src="@{/scripts/jquery.smartselect-1.1.min.js}"></script>
+    <script th:src="@{/scripts/My97DatePicker/WdatePicker.js}"></script>
+	<script th:src="@{/scripts/movie/list.js}"></script> 
+	-->
+	<script th:src="@{/scripts/business/groupapproval.js}"></script> 
+</head>
+<body>
+<div class="locationLine" layout:fragment="prompt">
+    当前位置：首页 &gt; <em >业务服务管理</em>
+</div>
+
+<div class="statisticBox w-782"  layout:fragment="content">
+    <div class="dataDetailList mt-12">    
+    <table  class="dataListTab">
+    	<thead>
+            <tr>
+                <th>包车订单号</th>
+                <th>乘坐人数</th>
+                <th>出发日期</th>
+                <th>出发时间</th> 
+                <th>出发地址</th>
+				<th>目的地址</th>
+				<th>状态</th>
+				<th>车牌号</th> 
+				
+            </tr>
+            <tr th:each="groupapply : ${listg}">
+            	<td th:text="${groupapply.group_id}"></td>
+            	<td th:text="${groupapply.person_number}"></td>
+            	<td th:text="${groupapply.group_date}"></td>
+            	<td th:text="${groupapply.group_time}"></td>
+            	<td th:text="${groupapply.group_departure}"></td>
+            	<td th:text="${groupapply.group_destination}"></td>
+            	<td th:text="${groupapply.vehicle}?审核通过:正在审核"></td>
+            	<td th:text="${groupapply.vehicle.vehicle_number}?审核通过:正在审核"></td>
+            	
+            </tr>
+            
+    	</thead>
+    </table>
+    </div>
+</div>
+
+</body>
+</html>

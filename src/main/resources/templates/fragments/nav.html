@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div th:fragment="nav">
+
+    <div class="columnLeftMenu">
+
+        <h6 ><span class="f-right"></span>个人购票管理</h6>
+        <ul >
+            <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/personal/add}">个体购票</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/personal/refund}">退票申请</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/personal/change}">换票申请</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/personal/userticket}">订单查询</a></li>
+        </ul>
+        <h6 ><span class="f-right"></span>包车订票管理</h6>
+        <ul >
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/group/add}">包车订票</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/group/refund}">退票申请</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/group/showgroup}">订单查询</a></li>
+        </ul>
+        <h6 ><span class="f-right"></span>业务服务管理</h6>
+        <ul >
+            <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/business/refundshow}">退票处理</a></li>
+            <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/business/changeshow}">换票处理</a></li>
+            <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/business/groupshowoncheck}">包车审查处理</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/business/groupshowonapproval}">用车审批处理</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/business/repair}">业务费用处理</a></li>
+        </ul>
+        <h6 ><span class="f-right"></span>检查管理</h6>
+        <ul>
+            <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/check/showinbound}">入站检查安排</a></li>
+            <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/check/showinboundonchecker}">入站检查结果录入</a></li>
+            <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/check/showallInbound}">入站检查结果查询</a></li>
+            <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/check/showpassenger}">乘车检查安排</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/check/showpassengeronchecker}">乘车检查结果录入</a></li>
+            <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/check/showallPassenger}">乘车检查结果查询</a></li>
+        </ul>
+        <h6 ><span class="f-right"></span>财务管理</h6>
+        <ul >
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/report/add}">报表填写</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/report/showreport}">报表查询</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/report/delete}">报表删除</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/report/update}">报表修改</a></li>
+        </ul>
+        <h6 ><span class="f-right"></span>资产管理</h6>
+        <ul >
+            <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/property/arrangementshow}">任务安排</a></li>
+            <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/property/showcheck}">检查车辆</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/property/repair}">维修车辆</a></li>
+            <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/property/vehicle}">车辆情况</a></li>
+        </ul>
+        
+        
+
+    </div>
+</div>
+</body>
+</html>

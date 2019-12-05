@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="fragments/layout">
+<head>
+    <title>电影管理</title>
+
+    <link th:href="@{/scripts/pagination/pagination.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/artDialog/default.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/My97DatePicker/skin/WdatePicker.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/styles/index.css}" rel="stylesheet"  type="text/css"/>
+ <!-- 
+    <script th:src="@{/scripts/pagination/jquery.pagination.js}"></script>
+    <script th:src="@{/scripts/jquery.smartselect-1.1.min.js}"></script>
+    <script th:src="@{/scripts/My97DatePicker/WdatePicker.js}"></script>
+   
+	<script th:src="@{/scripts/movie/list.js}"></script> 
+	-->
+	
+	<script th:src="@{/scripts/report/add.js}"></script> 
+</head>
+<body>
+<div class="locationLine" layout:fragment="prompt">
+    当前位置：首页 &gt; <em >报表管理</em>
+</div>
+
+
+<div class="statisticBox w-782"  layout:fragment="content">
+    
+    <form th:action="@{/personal/list}" enctype="multipart/form-data" method="post" id="saveForm">
+   	 <div class="radiusGrayBox782">
+        <div class="radiusGrayTop782"></div>
+        <div class="radiusGrayMid782">
+            <div class="dataSearchBox forUserRadius">
+   	<ul>    
+   			<li>
+		    	 <label class="preInpTxt f-left">请选择要上传的财务报表</label>
+		   		 <input id="file" name="file" type="file" class="inp-list f-left w-200"/>
+		    </li>
+		    <li>
+		    	<label class="preInpTxt f-left">请选择要上传的报表类型</label>
+		    	
+		            	<select name="template" id="template" class="inp-list f-left w-200">
+		                    <option th:each="template:${listt}"
+		                            th:value="${template}"
+		                            th:text="${template}">
+		                    </option>
+		                </select>
+		      	
+		     </li>
+		     <li> 	
+		    <a href="javascript:void(0)" class="blueBtn-62X30 f-right " id="reportselect">模板</a>
+		    <a href="javascript:void(0)" class="blueBtn-62X30 f-right " id="reportupload">上传</a>
+		     </li>
+    </ul>
+      </div>
+        </div>
+    </div>
+    </form >
+    
+    
+</div>
+
+</body>
+</html>
